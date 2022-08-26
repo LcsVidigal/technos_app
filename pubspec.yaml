@@ -50,13 +50,13 @@ dependencies:
 #   android: true
 #   ios: true
 
-# flutter_icons:
-#   image_path: "assets/images/symbol.png"
-#   ios: false
-#   remove_alpha_ios: true
-#   android: "launcher_icon"
-#   adaptive_icon_background: "#FFFFFF"
-#   adaptive_icon_foreground: "assets/images/symbol.png"
+flutter_icons:
+  image_path: "assets/images/symbol.png"
+  ios: false
+  remove_alpha_ios: true
+  android: "launcher_icon"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/symbol.png"
 
 dev_dependencies:
   flutter_test:
