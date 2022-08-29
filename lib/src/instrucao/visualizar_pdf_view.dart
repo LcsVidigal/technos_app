@@ -24,8 +24,8 @@ class _VisualizarPdfState extends State<VisualizarPdf> {
     Permission.manageExternalStorage.request();
 
     final prefs = await SharedPreferences.getInstance();
-    final String? videoDirectory = prefs.getString('technos_directory');
-    _pdf  = File('$videoDirectory/$categoria/$titulo.pdf');
+    final String? technosDirectory = prefs.getString('technos_directory');
+    _pdf  = File('$technosDirectory/$categoria/$titulo.pdf');
 
     _fileExists =  await _pdf.exists();
     

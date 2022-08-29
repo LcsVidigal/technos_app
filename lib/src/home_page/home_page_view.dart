@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
       child: Text(
         servico.titulo, 
         textAlign: TextAlign.center, 
-        style: TextStyle(fontSize: 22.0),
+        style: const TextStyle(fontSize: 22.0),
       ),
     );
   }

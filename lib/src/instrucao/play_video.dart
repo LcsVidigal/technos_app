@@ -125,36 +125,38 @@ class _PlayVideoState extends State<PlayVideo> {
             ),
           ),
           Expanded(
-            child: Column(
-                children: [
-                  Expanded(
-                    child: Center(
-                      child: _chewieController != null &&
-                              _chewieController!
-                                  .videoPlayerController.value.isInitialized
-                          ? Chewie(
-                              controller: _chewieController!,
-                            )
-                          : Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                CircularProgressIndicator(),
-                                SizedBox(height: 20),
-                                Text('Carregando...'),
-                              ],
-                            ),
+            child: _videoExists == false 
+              ? const Center(child: Text('Arquivo não encontrado', style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w500)))
+              : Column(
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: _chewieController != null &&
+                                _chewieController!
+                                    .videoPlayerController.value.isInitialized
+                            ? Chewie(
+                                controller: _chewieController!,
+                              )
+                            : Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  CircularProgressIndicator(),
+                                  SizedBox(height: 20),
+                                  Text('Carregando...'),
+                                ],
+                              ),
+                      ),
                     ),
-                  ),
-                  // const SizedBox(height: 50),
+                    // const SizedBox(height: 50),
 
-                  TextButton(
-                    onPressed: () {
-                      _chewieController?.enterFullScreen();
-                    },
-                    child: const Text('Fullscreen'),
-                  ),
-                ],
-              ),
+                    TextButton(
+                      onPressed: () {
+                        _chewieController?.enterFullScreen();
+                      },
+                      child: const Text('Fullscreen'),
+                    ),
+                  ],
+                ),
           ),
         ]
       )

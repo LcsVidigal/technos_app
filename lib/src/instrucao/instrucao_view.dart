@@ -12,7 +12,7 @@ class InstrucaoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Servico servico = ModalRoute.of(context)!.settings.arguments as Servico;
-    Size _size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -50,9 +50,9 @@ class InstrucaoPage extends StatelessWidget {
             ),
 
             const SizedBox(height: 20.0),
-            Text(servico.titulo, style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w500)),
+            Text(servico.titulo, textAlign: TextAlign.center, style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w500)),
             const SizedBox(height: 20.0),
-            if(_size.width > 550)
+            if(size.width > 550)
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -74,7 +74,7 @@ class InstrucaoPage extends StatelessWidget {
                 ],
               ),
 
-            if(_size.width < 550)
+            if(size.width < 550)
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
